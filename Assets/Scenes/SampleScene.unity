@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.61565083, g: 0.745283, b: 0.55193126, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,6 +304,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f3536a87cbc3ed49932897be273a31b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1513734721}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f3536a87cbc3ed49932897be273a31b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1513734723}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f3536a87cbc3ed49932897be273a31b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1513734726}
   m_SourcePrefab: {fileID: 100100000, guid: 6f3536a87cbc3ed49932897be273a31b, type: 3}
 --- !u!1 &330585543
 GameObject:
@@ -318,6 +324,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -463,6 +470,22 @@ MonoBehaviour:
   reflectionTarget: {fileID: 256250959379918990}
   reflectionPlaneOffset: 0.83
   hideReflectionCamera: 1
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8e770e2d6e7fe40b897612449254ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1513734720}
+  distance: 6
+  height: 2
+  rotationSpeed: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1015,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.167053, y: 1.6139458, z: 2}
   m_Center: {x: -0.00926742, y: -0.12543052, z: 0.111824244}
+--- !u!114 &1513734723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513734715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca725e24bee337a40adea9d15ef9584c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 7
+  acceleration: 4
+  deceleration: 2
+  rotationSpeed: 40
+  minSpeedForRotation: 1
+--- !u!114 &1513734726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513734715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 330585545}
 --- !u!1 &1873497426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,7 +1393,7 @@ MonoBehaviour:
   foamShadowsExpanded: 0
   intersectionEffectsExpanded: 0
   planarReflectionsExpanded: 0
-  reflectionStrength: 0.82
+  reflectionStrength: 0.362
   reflectionFresnel: 2.5
   useColorGradient: 0
   colorGradient:
@@ -1358,17 +1428,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28621134, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.2862065, b: 0.50980073, a: 1}
   colorDepth: 0.84
-  horizonColor: {r: 0, g: 0.22738785, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22738302, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30189762, a: 0.389}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30189282, a: 0.389}
   shoreStrength: 0.389
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20386171, g: 0.30974072, b: 0.517647, a: 0}
+  underwaterColor: {r: 0.20385715, g: 0.30973592, b: 0.517647, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -1415,11 +1485,11 @@ MonoBehaviour:
   shoreFoamFrequency: 0
   shoreFoamBreakupStrength: 0
   shoreFoamBreakupScale: 0
-  lighting: 0
+  lighting: 1
   lightingSmoothness: 0.9
   lightingSpecularColor: {r: 1, g: 1, b: 1, a: 0}
   lightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
-  lightingHardness: 0.448
+  lightingHardness: 0.104
   normalsTexture: {fileID: 2800000, guid: 746d7c598bbd4e346af730641ebd6cde, type: 3}
   normalsMovement: {x: 0.04, y: 0.36}
   normalsStrength: 0.086
@@ -1452,7 +1522,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
